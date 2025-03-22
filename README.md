@@ -1,2 +1,2 @@
 # computc-pygame
-pygame
+snake game
