@@ -5,11 +5,11 @@ import game
 
 
 class Food:
-    def __init__(self, game_state, user_snake):
+    def __init__(self, state):
         collision = True
         while collision is True:
             self.pos = {"x": random.randrange(0, 601, 20), "y": random.randrange(0, 601, 20)}
-            node = user_snake.head
+            node = state.snake.head
             while node is not None:
                 if self.pos == node.pos:
                     collision = True
@@ -17,4 +17,4 @@ class Food:
                 elif self.pos != node.pos:
                     collision = False
                     node = node.next
-        game_state.food.append(self)
+        state.food.append(self)
